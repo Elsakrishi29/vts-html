@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Job Application Form</title>
+</head>
+<body>
+	<header>
+		<h1>Junior Devops Engineer</h1>
+	</header>
+
+	<form action="/submit" method="POST">
+
+		<p>
+			<label for="fullname">Full Name : </label>
+		
+			<br>
+			<br>
+
+			<input type="text" id="fullname" name="fullname" required>
+		</p>
+
+		<p>
+			<label for="role">Application Role:</label>
+			<br>
+			<br>
+			<select id="role" name="role">
+				<option value="cloud">Cloud Engineer</option>
+				<option value="aws">AWS Devops</option>
+				<option value="sre">SRE</option>
+			</select>
+		</p>
+
+		<p>
+			Experience Level :
+			<br>
+			<input type="radio" id="entry" name="experience" value="Entry">
+			<label for="entry">Entry</label>
+
+			<input type="radio" id="senior" name="experience" value="Senior">
+			<label for="senior">Senior</label>
+		</p>
+
+		<p>
+			<label for="coverletter">Cover Letter:</label><br>
+			<textarea id="coverletter" name="coverletter" rows="5" cols="30"></textarea>
+		</p>
+
+		<p>
+			<button type="submit">Submit Application</button>
+		</p>
+
+	</form>
+</body>
+</html>

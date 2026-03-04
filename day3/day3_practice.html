@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Day 3 Extended</title>
+</head>
+<body>
+
+	<!-- Image with Figure -->
+	<figure>
+		<img src="image/download.png" alt="Sample placeholder image for practice">
+		<!-- <img src="images/download.png"> -->
+		<figcaption>
+			This is a sample placeholder image used for demonstration.
+		</figcaption>
+	</figure>
+
+	<br>
+	<br>
+
+	<!-- Table -->
+	<table border="1">
+		<caption>Inventory Table</caption>
+		<thead>
+			<tr>
+				<th>Item</th>
+				<th>Count</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr>
+				<td>Books</td>
+				<td>25</td>
+			</tr>
+			<tr>
+				<td>Pens</td>
+				<td>10</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<br>
+	<br>
+
+	<!-- Form -->
+	<form action="/submit" method="POST">
+		<label for='name'>Enter Your Name : </label>
+		
+		<br>
+		<br>
+
+		<input type="text" id="name" name="username">
+
+		<br>
+		<br>
+
+		<label for="password">Enter Your Password : </label>
+		
+		<br>
+		<br>
+
+		<input type="password" id="password" name="userpassword" placeholder="Enter Secure Password" required>
+
+		<br>
+		<br>
+
+	</form>
+
+	<!--DropDown Select-->
+	<label for="animals">Choose Your Fav Animal : </label>
+	
+	<br>
+	<br>
+
+	<select name="animals" id="animals">
+		<option value="dog">Dog</option>
+		<option value="rabbit">Rabbit</option>
+		<option value="squirrle">Squirrle</option>
+	</select>
+
+	<br>
+	<br>
+
+	<!-- button -->
+	<input type="submit" value="Submit">
+</body>
+</html>
