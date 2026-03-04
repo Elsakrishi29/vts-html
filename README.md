@@ -11,7 +11,7 @@ http://localhost:5500
 
 # Windows (Git Bash Terminal)
 
-start <YOUR_FILE_NAME>  #ex, day1_extended.html 
+start <YOUR_FILE_NAME>  #ex, index.html 
 
 (OR)
 
