@@ -1,0 +1,59 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body 
+{
+	width: 100%;
+	background-color: black;
+}
+
+h2
+{
+	text-align: center;
+	padding: 15px;
+	color: lightsalmon;
+}
+
+a{
+	text-decoration: none;
+	font-family: monospace;
+	font-size: 15px;
+	color: lightskyblue;
+}
+
+hr{
+	margin-bottom: 10px;
+	color: #afadaded;
+}
+
+.display-card
+{
+	width: 80%;
+	display: flex;
+}
+
+h3
+{
+	text-align: center;
+	margin-bottom: 15px;
+	color: blanchedalmond;
+}
+
+div ul li {
+	list-style-type: none;
+	padding-top: 5px;
+}
+
+.html-card,.css-card
+{
+	border: 1px solid #afadaded;
+	width: 25%;
+	margin: 10px;
+	padding: 20px;
+	background-color: #7b727233;
+	/*justify-content: center;*/
+	align-items: center;
+}

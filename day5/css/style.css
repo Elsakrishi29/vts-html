@@ -1,0 +1,90 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+/*day5_practice.html*/
+
+/*body
+{
+	background-color: lightgray;
+}*/
+
+.body
+{
+	background-color: lightgray;
+}
+
+.main-heading
+{
+	color: blue;
+}
+
+#content-box
+{
+	border: 1px solid black;
+	width: 400px;
+}
+
+#content-box li
+{
+	color: green;
+}
+
+h1,p
+{
+	font-family: Arial;
+}
+
+#content-box .urgent
+{
+	color: red;
+}
+
+/*mini-project1.html*/
+
+h2
+{
+	font-size: 18px;
+}
+
+.product-card
+{
+	border: 1px solid grey;
+	background-color: aquamarine;
+}
+
+.product-card p
+{
+	font-weight: bold;
+}
+
+#promo-text
+{
+	color: red;
+}
+
+/*mini-project2.html*/
+
+#main-nav li
+{
+	list-style-type: none;
+}
+
+#main-nav > ul 
+{
+	background-color: antiquewhite;
+	padding: 10px;
+}
+
+.active-link 
+{
+	color: red;
+	font-weight: bold;
+}
+
+h1,h2 
+{
+	font-family: Verdana;
+}
