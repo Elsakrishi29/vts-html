@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Interview Question Preparation</title>
+</head>
+<body>
+	<h1>General</h1>
+
+	<h3>Suppose you don't have the experience?</h3>
+	<p>I haven't had hands-on experience with that yet, but I am eager to learn and explore it.</p>
+	<p>I understand.I am confident that I can quickly adapt to production workflows if given the opportunity.</p>
+
+	<h3>Can you tell me your self-introduction</h3>
+
+	<p>
+		I’m Krishnaveni. and I’m currently staying in Tenkasi.<br>
+		I previously worked at Namlabs. <br>
+		It has two main products, called Atatus and Replybird.<br> 
+		My main work was on Atatus, which is an observability and monitoring tool.<br> 
+		I worked on building and testing applications using Docker, Kubernetes.<br>
+		I also solved cloud-related customer issues and added new cloud features in Atatus.<br> 
+		I also worked on payload extraction by capturing and analyzing request data from monitoring tools and adapting it for Atatus integrations.<br>
+		I have basic experience with CI/CD tools like GitHub Actions and Jenkins for build and testing.
+	</p>
+
+	<h3>Do you have python experience?</h3>
+	<p>
+		I have basic knowledge of Python.<br> 
+		I have used Python applications for build and testing.<br>
+		Currently I am learning Python and I have joined a Python full stack course to improve my skills.
+	</p>
+
+	<hr>
+
+	<h1>AWS</h1>
+
+	<h3>What AWS services have you used?</h3>
+	<p>I have worked with few AWS services like EC2, Lambda, ECR, VPC, S3, Clouformation</p>
+
+	<h1>IAM</h1>
+
+	<h3>What is IAM?</h3>
+	<p>IAM (Identity and Access Management) is used to manage users, roles, and permissions in AWS.</p>
+
+	<h3>What is an IAM User?</h3>
+	<p>An IAM User is a person or application that can log in to AWS using username/password or access keys.</p>
+
+	<h3>IAM Policy vs IAM Role</h3>
+	<p>IAM policies define permissions, and IAM roles are used to assign those permissions securely to AWS services or users.
+	IAM Policy Example: Allow EC2 read access, deny S3 delete access.</p>
+	<p>IAM Role is mainly used by AWS services (EC2, ECS, Lambda) to access other AWS resources securely without access keys.
+	IAM Role Example:EC2 uses a role to access S3.</p>
+
+	<h3>What is an inline policy?</h3>
+	<p>An inline policy is a policy directly attached to one user or role and cannot be reused.</p>
+
+	<h3>If AWS keys are leaked, what would you do?</h3>
+	<p>Immediately disable the leaked keys, rotate credentials, and check logs.</p>
+
+	<h3>Cross Account Access</h3>
+	<p>Cross-account access allows one AWS account to access resources in another account using IAM roles.</p>
+
+	<h1>S3 Bucket</h1>
+
+	<h3>Is there any limit for S3 buckets?</h3>
+	<p>Yes, S3 bucket limit is there.
+	By default, we can create 10,000 buckets per AWS account.
+	If we need more, we can request a quota increase through the Service Quotas console.</p>
+
+	<h3>Is this limit per region or per account?</h3>
+	<p>It is per AWS account, not per region.</p>
+
+	<h3>What is Amazon S3?</h3>
+	<p>Amazon S3 (Simple Storage Service) is an object storage service in AWS.<br>
+	It is used to store and retrieve any type of data like files, images, videos, logs, and backups.</p>
+
+	<h3>What are S3 buckets?</h3>
+	<p>S3 bucket is a container used to store objects like files, images, and videos in AWS.</p>
+
+	<h3>What is S3 Versioning?</h3>
+	<p>S3 Versioning keeps multiple versions of the same object to protect against accidental deletion or overwrite.</p>
+
+	<h1>EC2</h1>
+
+	<h3>What is Auto scaling?</h3>
+	<p>Auto Scaling automatically increases or decreases the number of servers based on application traffic.<br>
+	If traffic increases, it adds more instances. <br>
+	If traffic decreases, it removes extra instances. <br>
+	This helps maintain performance and reduce cost.</p>
+
+	<h3>How do you deploy an application in AWS?</h3>
+	<p>I deploy applications in AWS by creating an EC2 instance.<br>
+	After creating the instance, I configure the required VPC settings and allow inbound and outbound traffic through security groups.</p>
+	<p>Then I connect to the EC2 instance using SSH from my Linux machine. <br>
+	After connecting, I install the required packages and upload the application files. <br> 
+	Finally, I run the application and test it to make sure it is working correctly.</p>
+
+	<h3>How do you connect to EC2?</h3>
+	<p>I connect to the EC2 instance using SSH from my Linux machine with the key pair.</p>
+	<em>Ex: ssh -i key.pem ec2-user@public-ip</em>
+
+	<h3>Application is down in AWS. How will you troubleshoot?</h3>
+	<p>
+		First, I check whether the EC2 instance is running. <br>
+		Then I connect to the server using SSH and verify the application process and logs. <br>
+		I also check security group rules, network configuration, and server resources like CPU, memory, and disk usage.
+	</p>
+
+	<hr>
+
+	<h1>Terraform</h1>
+
+	<h3>Terraform experience :</h3>
+
+	<p>
+		I have hands-on experience with Terraform at a basic to intermediate level. <br>
+		I have used Terraform to create EC2 instances along with security groups. <br>
+		I understand the Terraform workflow like init, plan, and apply. <br>
+		I also understand how Terraform uses the state file to track existing infrastructure and avoid duplicate resource creation.
+	</p>
+
+	<h3>Have you worked with Terraform? How do you manage state?</h3>
+	<p>Yes, I have basic experience.</p>
+	<p>State is managed using remote backend (S3 + DynamoDB) for locking and consistency.</p>
+
+	<h3>What is Infrastructure as Code?</h3>
+	<p>Infrastructure as Code means managing and creating infrastructure using code instead of manual configuration.</p>
+	<p>For example, servers, networks, and storage can be created automatically using tools like Terraform or AWS CloudFormation.</p>
+
+	<h3>What is Terraform?</h3>
+	<p>Terraform is an Infrastructure as Code tool used to create and manage cloud resources automatically.</p>
+
+	<h3>What are Terraform modules?</h3>
+	<p>Terraform modules are reusable blocks of code in Terraform.</p>
+	<p>They help organize infrastructure code and reuse it in different projects.</p>
+	<p>For example, a module can be created to deploy an EC2 instance and reused multiple times.</p>
+
+	<h3>Difference between Terraform vs CloudFormation</h3>
+	<p>
+		<i>Terraform</i><br>
+
+		Works with multiple cloud providers<br>
+		Uses HCL language <br>
+		Open source tool<br>
+
+		<i>AWS CloudFormation</i>
+
+		Works only with AWS<br>
+		Uses JSON or YAML<br>
+		Fully managed by AWS
+	</p>
+
+	<h3>Terraform commands:</h3>
+	<p>
+		<b>`terraform init`</b> – initialize <br>
+		<b>`terraform plan`</b> – preview changes <br>
+		<b>`terraform apply`</b> – create/update resources <br>
+		<b>`terraform destroy`</b> – delete resources <br>
+	</p>
+
+	<h3>Same Terraform file, two people working – how to know changes?</h3>
+	<p>Terraform uses state locking and terraform plan to detect existing resources.</p>
+
+    <h3>Console changes vs Terraform template mismatch – what to do?</h3>
+	<p>Run terraform plan to detect drift.<br>
+	Then update the Terraform code or use terraform import.</p>
+
+	<hr>
+
+	<h1>Kubernetes</h1>
+
+	<h3>Kubernetes vs Docker</h3>
+	<p>Docker is used to build and run containers.</p>
+	<p>Kubernetes is used to manage, scale, and deploy containers.</p>
+
+	<h3>What is Kubernetes?</h3>
+	<p>Kubernetes is a container orchestration tool used to deploy, manage, scale, and monitor containerized applications.</p>
+	<p>It provides self-healing, auto-scaling, and automatic container management, which is why it is called an orchestration tool.</p>
+
+	<h3>What is Pod</h3>
+	<p>A Pod is the smallest deployable unit in Kubernetes that runs one or more containers.<br>
+	Pods in Kubernetes are ephemeral, meaning they can be created and deleted anytime.</p>
+
+	<h3>What is a Node?</h3>
+
+	<p>A Node is a machine (virtual or physical) where Pods run in Kubernetes.<br>
+
+	Kubernetes has two types of nodes:<br>
+
+	* Control Plane (Master Node) => Manages and controls the cluster and worker nodes.<br>
+
+	* Worker Node => Runs the Pods and containers.<br>
+
+	Master node is called the control plane. because its manged the worker node.</p>
+
+	<h3>Difference between Pod and Container</h3>
+	<p>A container is a single running instance of an application.</p>
+	<p>A Pod is the smallest unit in Kubernetes and it can contain one or more containers.</p>
+	<p>Containers inside a Pod share the same network and storage.</p>
+
+	<h3>What is Deployment</h3>
+	<p>Deployment in Kubernetes is used to manage and update Pods.</p>
+	<p>It ensures the required number of Pods are always running and helps with updates and scaling.</p>
+
+	<h3>What is Service</h3>
+	<p>A Service in Kubernetes provides a stable network endpoint to access Pods.</p>
+	<p>Even if Pods restart or change IP addresses, the Service allows applications to communicate reliably.</p>
+
+	<h3>What is Ingress</h3>
+	<p>Ingress in Kubernetes manages external access to services.</p>
+	<p>It allows users to access applications using domain names or HTTP/HTTPS routing.</p>
+
+	<h3>Pod is not starting. How will you debug?</h3>
+	<p>First, I check the Pod status using kubectl get pods.<br>
+	Then I check details using kubectl describe pod.<br>
+	Next, I check logs using kubectl logs.<br>
+	This helps identify errors like image issues, resource limits, or configuration problems.</p>
+
+	<hr>
+
+	<h1>Docker</h1>
+
+	<h3>What is Docker?</h3>
+	<p>Docker is a container platform. It is used to build, run, and manage containers.</p>
+
+	<h3>What is Dockerfile</h3>
+	<p>Dockerfile is a text file with instructions. It tells Docker how to build an image.
+
+	Which base OS to use, What files to copy, What commands to run, How to start the application
+	<code>
+		FROM node:16<br>
+		COPY . /app<br>
+		WORKDIR /app<br>
+		RUN npm install<br>
+		CMD ["npm", "start"]
+	</code>
+	<p>
+
+	<h3>Difference between Docker image and container</h3>
+	<p>
+		* Image: Blueprint/template
+		* Container: Running instance of the image
+	</p>
+
+	<h3>Application works locally but fails in Docker container. What will you check?</h3>
+	<p>I will check the Docker logs to see the error.<br>
+	Then I will verify the Dockerfile configuration, environment variables, and required dependencies.<br>
+	I will also check port mappings and network settings in the container.</p>
+
+	<hr>
+
+	<h1>Linux</h1>
+
+	<p>top <br>
+	ps <br>
+	netstat <br>
+	df -h <br>
+	du -sh <br>
+	grep <br>
+	chmod <br>
+	chown</p>
+
+	<h3>Server disk is full. What will you do?</h3>
+	<p>First, I check disk usage using df -h.<br>
+	Then I find large files using du -sh.<br>
+	I remove unnecessary files or old logs to free up space.</p>
+
+	<hr>
+
+	<h1>Bash Script</h1>
+
+	<h3>Have you written Bash scripts?</h3>
+
+	I have experience using Bash scripts for basic automation. I wrote scripts to run applications continuously and send requests at regular intervals using curl. For example, I created a script to send data to Atatus every 30 seconds.
+	I also used Bash scripts to automate running applications inside Docker. Instead of typing Linux or Docker commands every time, I added docker build, docker run, and docker-compose up/down commands inside a script. By running a single command like `./script.sh`, the application starts automatically and sends data to Atatus.
+	This saved time, reduced manual work, and made it easy to run demos or tests. After committing the project to Bitbucket, any team member could run it easily, even when I was not available.
+
+	<h3>Example automation you created?</h3>
+	<p>I created a Bash script to automate running applications and sending requests at regular intervals using curl.<br>
+	For example, the script sends data to Atatus every 30 seconds.<br>
+	This helps test application monitoring automatically.</p>
+
+	<h3>Script to check disk usage?</h3>
+	<code>
+	#!/bin/bash<br>
+	echo "Disk Usage:"<br>
+	df -h
+	</code>
+
+	<h3>Script to Send Data Every 30 Seconds</h3>
+	<code>
+		#!/bin/bash<br>
+
+		while true<br>
+		do<br>
+		  echo "Sending request to Atatus..."<br>
+		  curl http://localhost:3000<br>
+		  sleep 30<br>
+		done
+	</code>
+
+	<h3>Script to Automate Docker Build and Run</h3>
+	<code>
+		#!/bin/bash<br>
+
+		echo "Building Docker image..."<br>
+		docker build -t myapp .<br>
+
+		echo "Running container..."<br>
+		docker run -d -p 3000:3000 myapp<br>
+
+		echo "Application started successfully."
+	</code>
+
+	<h3>Script to Start Application and Send Requests</h3>
+	<code>
+		#!/bin/bash <br>
+
+		echo "Starting application..." <br>
+		docker-compose up -d <br>
+
+		echo "Sending test requests..."<br>
+
+		while true<br>
+		do<br>
+		  curl http://localhost:3000<br>
+		  sleep 30<br>
+		done
+	</code>
+
+<hr>
+
+	<h1>CI/CD</h1>
+
+	<h3>Jenkins build failed. What steps will you follow?</h3>
+	<p>
+		Check Jenkins console log<br>
+		Check dependency errors<br>
+		Check build tool (Maven/npm)<br>
+		Check environment variables<br>
+		Check server resources		
+	</p>
+
+	<h3>What CI/CD tool did you use mostly?</h3>
+	<p>
+		I mostly used GitHub Actions with a local runner to build and test applications automatically.<br> 
+		I also have basic exposure to Jenkins pipelines.
+	</p>
+
+	<h3>What is CI/CD? Explain the pipeline flow.</h3>
+	<p>CI/CD stands for Continuous Integration and Continuous Deployment.<br>
+	It is used to automatically build, test, and deploy applications when developers push code to a repository.<p>
+
+	<strong>Pipeline flow:</strong>
+
+	<ul>
+		<li>Developer pushes code to repository</li>
+		<li>CI pipeline starts automatically</li>
+		<li>Application is built</li>
+		<li>Tests are executed</li>
+		<li>If tests pass, the application is deployed</li>
+	</ul>
+
+	<h3>How do you create a pipeline in Jenkins?</h3>
+	<p>
+		I have basic knowledge of creating pipelines in Jenkins.<br>
+		In Jenkins, we create a pipeline job and define the build steps in a Jenkinsfile.<br>
+		The pipeline usually includes stages like build, test, and deployment.
+	</p>
+
+	<h3>Difference between Freestyle Job and Pipeline Job</h3>
+	
+	<p>
+		<i>Freestyle Job</i><br>
+		Simple job configuration<br>
+        Steps added manually in Jenkins UI
+
+		<i>Pipeline Job</i><br>
+		Uses code (Jenkinsfile)<br>
+		Supports multiple stages like build, test, deploy<br>
+		Easier to maintain in version control
+	<p>
+
+	<h3>What is Jenkinsfile?</h3>
+	<p>Jenkinsfile is a configuration file used to define the CI/CD pipeline stages.<br>
+	It contains instructions for build, test, and deployment steps.</p>
+
+	<code>
+		pipeline {<br>
+		    agent any<br>
+		    stages {<br>
+		        stage('Build') {<br>
+		            steps {<br>
+		                echo 'Building application'<br>
+		            }<br>
+		        }<br>
+		    }<br>
+		}
+	</code>
+
+	<h3>What happens when a pipeline fails? How do you troubleshoot?</h3>
+	<p>
+		First, I check the pipeline logs to find the error.<br>
+		Then I verify the build steps, dependencies, and configuration.<br>
+		I also check whether the application build or tests failed.<br>
+		After fixing the issue, I rerun the pipeline.
+	</p>
+</body>
+</html>
