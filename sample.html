@@ -6,7 +6,20 @@
 	<title>Interview Question Preparation</title>
 </head>
 <body>
-	<h1>General</h1>
+	<h4 id="top">Goto your Head</h4>
+	<ol>
+		<li><a href="#general">General</a></li>
+		<li><a href="#ci-cd">CI/CD</a></li>
+		<li><a href="#aws">AWS</a></li>
+		<li><a href="#terraform">Terraform</a></li>
+		<li><a href="#Kubernetes">Kubernetes</a></li>
+		<li><a href="#docker">Docker</a></li>
+		<li><a href="#linux">Linux</a></li>
+		<li><a href="#bash-script">Bash Script</a></li>
+	</ol>
+
+	<h1 id="general">General</h1>
+	<h4><a href="#top">GoTo Top</a></h4>
 
 	<h3>Suppose you don't have the experience?</h3>
 	<p>I haven't had hands-on experience with that yet, but I am eager to learn and explore it.</p>
@@ -34,12 +47,280 @@
 
 	<hr>
 
-	<h1>AWS</h1>
+	<h1 id="ci-cd">CI/CD</h1>
+
+	<h3>What CI/CD tool did you use mostly?</h3>
+	<p>
+		I mostly used GitHub Actions with a local runner to build and test applications automatically.<br> 
+		I also have basic exposure to Jenkins pipelines.
+	</p>
+
+	<h3>What is CI/CD? Explain the pipeline flow.</h3>
+	<p>CI/CD stands for Continuous Integration and Continuous Deployment.<br>
+	It is used to automatically build, test, and deploy applications when developers push code to a repository.<p>
+
+	<strong>Pipeline flow:</strong> <br>
+
+	<ul>
+		<li>Developer pushes code to repository</li>
+		<li>CI pipeline starts automatically</li>
+		<li>Application is built</li>
+		<li>Tests are executed</li>
+		<li>If tests pass, the application is deployed</li>
+	</ul>
+
+	<h3>What is Jenkinsfile?</h3>
+	<p>Jenkinsfile is a configuration file used to define the CI/CD pipeline stages.<br>
+	It contains instructions for build, test, and deployment steps.</p>
+
+	<code>
+		pipeline {<br>
+		    agent any<br>
+		    stages {<br>
+		        stage('Build') {<br>
+		            steps {<br>
+		                echo 'Building application'<br>
+		            }<br>
+		        }<br>
+		    }<br>
+		}
+	</code>
+
+	<h3>How do you create a pipeline in Jenkins?</h3>
+	<p>
+		I have basic knowledge of creating pipelines in Jenkins.<br>
+		In Jenkins, we create a pipeline job and define the build steps in a Jenkinsfile.<br>
+		The pipeline usually includes stages like build, test, and deployment.
+	</p>
+
+	<h3>Explain CI/CD Benefit?</h3>
+
+	<ul>
+		<li>Faster Development & Deployment</li>
+		<li>Early Bug Detection</li>
+		<li>Less Manual Work</li>
+		<li>Better Code Quality</li>
+		<li>Faster Release to Production</li>
+		<li>Easy Rollback  - If something fails, we can quickly rollback to the previous version.</li>
+	</ul> 
+
+	<h3>How does CI/CD work in Jenkins?</h3>
+
+	<p>Jenkins is a CI/CD tool where pipelines are created to automate build, test, and deployment.</p>
+
+	<ul>
+		<li>Code is pushed to GitHub</li>
+		<li>GitHub webhook triggers Jenkins</li>
+		<li>Jenkins pulls the code</li>
+		<li>Jenkins builds and tests the app</li>
+		<li>Docker image is created and pushed</li>
+		<li>Application is deployed</li>
+	</ul>
+
+	<h3>How to work CI/CD Pipeline?</h3>
+	<p>CI/CD works by triggering pipelines on code changes.</p>
+
+	<h3> CI vs CD – Difference </h3>
+
+	<strong>1. CI (Continuous Integration)</strong>
+
+	<p>CI means automatically building and testing the code whenever a developer pushes changes to the repository.</p>
+	<p>Purpose: Find bugs early, Make sure new code does not break existing code</p>
+
+	<strong>2. CD (Continuous Deployment / Delivery)</strong>
+
+	<br>
+	<p></p>
+	<i>Continuous Deployment</i><br>
+
+	<ul>
+		<li>Code is automatically deployed to production</li>
+		<li>No manual approval</li>
+		<li>Fully automated</li>
+	</ul>
+	<p>Purpose: Faster release, No manual intervention</p>
+
+	<i>Continuous Delivery</i><br>
+
+	<ul>
+		<li>Code is automatically deployed to test or staging environment</li>
+		<li>Production deployment is manual</li>
+		<li>Used when we want control before going live</li>
+	</ul>
+	<p>Purpose: Safe release, Manual approval before production</p>
+
+	<h3>Difference between Freestyle Job and Pipeline Job</h3>
+	
+	<p>
+		<i><strong>Freestyle Job</strong></i><br>
+		<ul>
+			<li>Simple job configuration</li>
+			<li>Steps added manually in Jenkins UI</li>
+		</ul>
+
+		<i><strong>Pipeline Job</strong></i><br>
+		<ul>
+			<li>Uses code (Jenkinsfile)</li>
+			<li>Supports multiple stages like build, test, deploy</li>
+			<li>Easier to maintain in version control</li>
+		</ul>		
+	<p>
+
+	<h3>What happens when a pipeline fails? How do you troubleshoot?</h3>
+	<p>
+		First, I check the pipeline logs to find the error.<br>
+		Then I verify the build steps, dependencies, and configuration.<br>
+		I also check whether the application build or tests failed.<br>
+		After fixing the issue, I rerun the pipeline.
+	</p>
+
+	<h3>Jenkins build failed. What steps will you follow?</h3>
+	<ul>
+		<li>First I Check Jenkins console log</li>
+		<li>Then, Check dependency errors</li>
+		<li>Then,I verify the build tool (Maven/npm)</li>
+		<li>Then, I Check environment variables</li>
+		<li>Finally, I Check server resources</li>
+	</ul>
+
+<hr>
+
+	<h1 id="aws">AWS</h1>
+	<h4><a href="#top">GoTo Top</a></h4>
+
+	<h3>AWS Experience</h3>
+	<p>
+		I have worked with few aws services based on project requirements.<br>
+		I have used AWS EC2 to create & connected linux server, tested the application and monitored cpu/memory.<br>
+		I have also used S3 storing data like error logs through cloudformation and kinesis.<br>
+		For ECS, I built the docker imges, pushed them to ECR, ran the application using aws faragate launch type.<br>
+		In VPC, I managed security group and network access for tested the application in cloud.<br>
+		I used IAM for user access and basic permission. <br>
+		I also used lambda function for deploy and testing serverless and SAM application.
+	</p>
+
+	<h3>RDS Connection Experience</h3>
+	<p>Yes, I have worked with MySQL database connection.<br>
+	But RDS creation was handled by the team lead.<br>
+	I have experience connecting MySQL (AWS RDS) with applications and testing database connectivity.<br>
+	I configured host, port, username, password, and database name using environment variables.</p>
+
+	<h3>How do you deploy an application in AWS?</h3>
+	<p>I deploy applications in AWS by creating an EC2 instance.<br>
+	After creating the instance, I configure the required VPC settings and allow inbound and outbound traffic through security groups.</p>
+	<p>Then I connect to the EC2 instance using SSH from my Linux machine. <br>
+	After connecting, I install the required packages and upload the application files. <br> 
+	Finally, I run the application and test it to make sure it is working correctly.</p>
+
+	<h3>Application is down in AWS. How will you troubleshoot?</h3>
+	<p>
+		First, I check whether the EC2 instance is running. <br>
+		Then I connect to the server using SSH and verify the application process and logs. <br>
+		I also check security group rules, network configuration, and server resources like CPU, memory, and disk usage.
+	</p>
+
+	<h3>Inbound and Outbound Rules</h3>
+	<p>Inbound rules define what traffic is allowed into the EC2 instance, and outbound rules define what traffic is allowed out of the EC2 instance.</p>
 
 	<h3>What AWS services have you used?</h3>
 	<p>I have worked with few AWS services like EC2, Lambda, ECR, VPC, S3, Clouformation</p>
 
+	<h3>What is Cloud Computing? how is AWS different?</h3>
+
+	<ul>
+		<li>Cloud Computing means using servers over the internet instead of physical server.</li>
+		<li>We can access the application anytime and pay only for what we use.</li>
+		<li>We can also scale up or scale down based on requirements.</li>
+		<li>AWS offers scalable, secure, and pay-as-you-go services globally.</li>
+	</ul>
+
+	<h1>EC2</h1>
+	<h4><a href="#top">GoTo Top</a></h4>
+
+	<h3>What is Auto scaling?</h3>
+	<p>Auto Scaling automatically increases or decreases the number of servers based on application traffic.<br>
+	If traffic increases, it adds more instances. <br>
+	If traffic decreases, it removes extra instances. <br>
+	This helps maintain performance and reduce cost.</p>
+
+	<h3>How do you connect to EC2?</h3>
+	<p>I connect to the EC2 instance using SSH from my Linux machine with the key pair.</p>
+	<em>Ex: ssh -i key.pem ec2-user@public-ip</em>
+
+	<h3>What is Security Group?</h3>
+	<p>Security group is a virutual firewall that controls inbound and outbound traffic.</p>
+
+	<h3>Java app deployment on EC2 (step by step)</h3>
+
+	<ul>
+		<li>Launch EC2</li>
+		<li>Install Java & required packages</li>
+		<li>Copy JAR/WAR file</li>
+		<li>Run the app using java -jar</li>
+		<li>Open port in security group</li>
+		<li>Access using public IP</li>
+	</ul>
+	
+	<h1>Lambda</h1>
+	<h4><a href="#top">GoTo Top</a></h4>
+
+	<h3>What is Serverless?</h3>
+
+	<p>Serverless means we don’t manage servers.</p>
+	<p>Cloud provider manages servers, scaling, and maintenance, and we focus only on writing code.</p>
+
+	<h3>What is a Serverless Lambda Function?</h3>
+
+	<p>A serverless Lambda function is a piece of code that runs without managing servers and is executed only when an event occurs.</p>
+
+	<h3>What is a "cold start" in AWS Lambda, and how can you minimize its impact?</h3>
+	<p>A Cold start is the delay that happens when AWS has to set up a new server for a function that has not run in a while.</p>
+	<p>To fix it, I use Provisioned concurrency to keep it ready or minimize the code size to make it boot faster.</p>
+
+	<h3>What is the default execution timeout in AWS Lambda, and can it be changed?</h3>
+	<p>Default timeout is 3 seconds.”<br>
+	“Yes, it can be increased up to 15 minutes (900 seconds).”</p>
+
+ 	<h3>What are Lambda Layers, and how do you use them?</h3>
+	<p>Lambda Layers allow us to share common libraries and dependencies across multiple Lambda functions.</p>
+	<p>Example: “Used for shared Python packages or common code.”</p>
+
+	<h1>VPC</h1>
+	<h4><a href="#top">GoTo Top</a></h4>
+
+	<h3>What is VPC?</h3>
+	<p>VPC is a private network in AWS where we launch our resources like EC2.</p>
+
+	<h3>What is subnet?</h3>
+	<p>Subnet is a smaller network inside a VPC.</p>
+
+	<h3>Difference between Security Group and NACL?</h3>
+
+	<i><strong>Security Group</strong></i><br>
+	<ul>
+		<li>Security Group is a virtual firewall in AWS.</li>
+		<li>A Security Group works at the instance level.</li>
+		<li>It is stateful, which means if inbound traffic is allowed, outbound traffic is automatically allowed.</li>
+	</ul>
+	
+	<i><strong>NACL</strong></i>
+
+	<ul>
+		<li>NACL stands for Network Access Control List.</li>
+		<li>It works at the subnet level.</li>
+		<li>It is stateless, so we need to define both inbound and outbound rules separately.</li>
+	</ul>
+	
+	<h3>Difference between public and private subnet?</h3>
+	<p>Public subnet has internet access (via Internet Gateway). </p>
+	<p>Private subnet does not have direct internet access, used for databases and backend</p>
+
+	<h3>Public IP vs Private IP?</h3>
+	<p>Private IP is used for internal communication.</p>
+	<p>Public IP is used for internet access and is globally unique.</p>
+
 	<h1>IAM</h1>
+	<h4><a href="#top">GoTo Top</a></h4>
 
 	<h3>What is IAM?</h3>
 	<p>IAM (Identity and Access Management) is used to manage users, roles, and permissions in AWS.</p>
@@ -63,6 +344,7 @@
 	<p>Cross-account access allows one AWS account to access resources in another account using IAM roles.</p>
 
 	<h1>S3 Bucket</h1>
+	<h4><a href="#top">GoTo Top</a></h4>
 
 	<h3>Is there any limit for S3 buckets?</h3>
 	<p>Yes, S3 bucket limit is there.
@@ -82,75 +364,19 @@
 	<h3>What is S3 Versioning?</h3>
 	<p>S3 Versioning keeps multiple versions of the same object to protect against accidental deletion or overwrite.</p>
 
-	<h1>EC2</h1>
-
-	<h3>What is Auto scaling?</h3>
-	<p>Auto Scaling automatically increases or decreases the number of servers based on application traffic.<br>
-	If traffic increases, it adds more instances. <br>
-	If traffic decreases, it removes extra instances. <br>
-	This helps maintain performance and reduce cost.</p>
-
-	<h3>How do you deploy an application in AWS?</h3>
-	<p>I deploy applications in AWS by creating an EC2 instance.<br>
-	After creating the instance, I configure the required VPC settings and allow inbound and outbound traffic through security groups.</p>
-	<p>Then I connect to the EC2 instance using SSH from my Linux machine. <br>
-	After connecting, I install the required packages and upload the application files. <br> 
-	Finally, I run the application and test it to make sure it is working correctly.</p>
-
-	<h3>How do you connect to EC2?</h3>
-	<p>I connect to the EC2 instance using SSH from my Linux machine with the key pair.</p>
-	<em>Ex: ssh -i key.pem ec2-user@public-ip</em>
-
-	<h3>Application is down in AWS. How will you troubleshoot?</h3>
-	<p>
-		First, I check whether the EC2 instance is running. <br>
-		Then I connect to the server using SSH and verify the application process and logs. <br>
-		I also check security group rules, network configuration, and server resources like CPU, memory, and disk usage.
-	</p>
-
 	<hr>
 
-	<h1>Terraform</h1>
-
-	<h3>Terraform experience :</h3>
-
-	<p>
-		I have hands-on experience with Terraform at a basic to intermediate level. <br>
-		I have used Terraform to create EC2 instances along with security groups. <br>
-		I understand the Terraform workflow like init, plan, and apply. <br>
-		I also understand how Terraform uses the state file to track existing infrastructure and avoid duplicate resource creation.
-	</p>
+	<h1 id="terrafom">Terraform</h1>
+	<h4><a href="#top">GoTo Top</a></h4>
 
 	<h3>Have you worked with Terraform? How do you manage state?</h3>
 	<p>Yes, I have basic experience.</p>
-	<p>State is managed using remote backend (S3 + DynamoDB) for locking and consistency.</p>
+	<p>I understand the Terraform workflow like init, plan, and apply</p>
 
-	<h3>What is Infrastructure as Code?</h3>
-	<p>Infrastructure as Code means managing and creating infrastructure using code instead of manual configuration.</p>
-	<p>For example, servers, networks, and storage can be created automatically using tools like Terraform or AWS CloudFormation.</p>
+	<p>State is managed using remote backend (S3 + DynamoDB) for locking and consistency.</p>
 
 	<h3>What is Terraform?</h3>
 	<p>Terraform is an Infrastructure as Code tool used to create and manage cloud resources automatically.</p>
-
-	<h3>What are Terraform modules?</h3>
-	<p>Terraform modules are reusable blocks of code in Terraform.</p>
-	<p>They help organize infrastructure code and reuse it in different projects.</p>
-	<p>For example, a module can be created to deploy an EC2 instance and reused multiple times.</p>
-
-	<h3>Difference between Terraform vs CloudFormation</h3>
-	<p>
-		<i>Terraform</i><br>
-
-		Works with multiple cloud providers<br>
-		Uses HCL language <br>
-		Open source tool<br>
-
-		<i>AWS CloudFormation</i>
-
-		Works only with AWS<br>
-		Uses JSON or YAML<br>
-		Fully managed by AWS
-	</p>
 
 	<h3>Terraform commands:</h3>
 	<p>
@@ -159,6 +385,32 @@
 		<b>`terraform apply`</b> – create/update resources <br>
 		<b>`terraform destroy`</b> – delete resources <br>
 	</p>
+
+	<h3>What is Infrastructure as Code?</h3>
+	<p>Infrastructure as Code means managing and creating infrastructure using code instead of manual configuration.</p>
+	<p>For example, servers, networks, and storage can be created automatically using tools like Terraform or AWS CloudFormation.</p>
+
+	<h3>What are Terraform modules?</h3>
+	<p>Terraform modules are reusable blocks of code in Terraform.</p>
+	<p>They help organize infrastructure code and reuse it in different projects.</p>
+	<p>For example, a module can be created to deploy an EC2 instance and reused multiple times.</p>
+
+	<h3>Difference between Terraform vs CloudFormation</h3>
+		<i><strong>Terraform</strong></i><br>
+
+		<ul>
+			<li>Works with multiple cloud providers</li>
+			<li>Uses HCL language</li>
+			<li>Open source tool</li>
+		</ul>
+
+		<i><strong>AWS CloudFormation</strong></i><br>
+
+		<ul>
+			<li>Works only with AWS</li>
+			<li>Uses JSON or YAML</li>
+			<li>Fully managed by AWS</li>
+		</ul>
 
 	<h3>Same Terraform file, two people working – how to know changes?</h3>
 	<p>Terraform uses state locking and terraform plan to detect existing resources.</p>
@@ -169,7 +421,8 @@
 
 	<hr>
 
-	<h1>Kubernetes</h1>
+	<h1 id="Kubernetes">Kubernetes</h1>
+	<h4><a href="#top">GoTo Top</a></h4>
 
 	<h3>Kubernetes vs Docker</h3>
 	<p>Docker is used to build and run containers.</p>
@@ -220,15 +473,16 @@
 
 	<hr>
 
-	<h1>Docker</h1>
+	<h1 id="docker">Docker</h1>
+	<h4><a href="#top">GoTo Top</a></h4>
 
 	<h3>What is Docker?</h3>
 	<p>Docker is a container platform. It is used to build, run, and manage containers.</p>
 
-	<h3>What is Dockerfile</h3>
-	<p>Dockerfile is a text file with instructions. It tells Docker how to build an image.
-
-	Which base OS to use, What files to copy, What commands to run, How to start the application
+	<h3>What is Dockerfile?</h3>
+	<p>Dockerfile is a text file with instructions. <br>
+		It tells Docker how to build an image.<br>
+		Which base OS to use, What files to copy, What commands to run, How to start the application</p>
 	<code>
 		FROM node:16<br>
 		COPY . /app<br>
@@ -236,31 +490,109 @@
 		RUN npm install<br>
 		CMD ["npm", "start"]
 	</code>
-	<p>
+
+	<h3>What is Docker Compose?</h3>
+	<p>Docker Compose is a tool to run multiple containers together.<br>
+	   It Used for multi-container applications<br>
+	   One command to start all: docker-compose up</p>
+	<li><strong>Example :</strong></li>
+	<ul>
+		<li>App Container</li>
+		<li>Database Container</li>
+		<li>Redis Container</li>
+	</ul>
 
 	<h3>Difference between Docker image and container</h3>
 	<p>
-		* Image: Blueprint/template
+		* Image: Blueprint/template <br>
 		* Container: Running instance of the image
 	</p>
+
+	<h3>Difference Between ENTRYPOINT and CMD</h3>
+	<p>* ENTRYPOINT: Mandatory command , fixed command, always runs<br>
+		* CMD: Default command (can be overridden)
+	</p>
+
+	<h3>Difference Between Containers and Virtual Machines</h3>
+	<p>* Containers share host OS → lightweight<br>
+	   * VMs have full OS → heavy and slow
+	</p>
+
+	<h3>Docker Architecture</h3>
+	<p>Docker has three main parts:</p>
+	<ul>
+		<li>Docker Client – where we run commands</li>
+		<li>Docker Daemon (dockerd) – runs in the background and manages containers</li>
+		<li>Docker Registry – stores images (like Docker Hub or ECR).</li>
+	</ul>
 
 	<h3>Application works locally but fails in Docker container. What will you check?</h3>
 	<p>I will check the Docker logs to see the error.<br>
 	Then I will verify the Dockerfile configuration, environment variables, and required dependencies.<br>
 	I will also check port mappings and network settings in the container.</p>
 
+	<h3>How to Reduce Docker Image Size?</h3>
+
+	<ul>
+		<li>Use smaller base images (example: alpine)</li>
+		<li>Remove extra files (logs, cache)</li>
+		<li>Use multi-stage builds</li>
+		<li>Combine RUN commands.</li>
+		<li>Only install required packages</li>
+	</ul>
+
+	<h3>What is a Docker Multi-Stage Build? Why Use It?</h3>
+	<p>Multi-stage build uses multiple FROM statements in a Dockerfile.<br>
+	   It helps reduce image size by copying only the final output and not build tools.</p>
+
 	<hr>
 
-	<h1>Linux</h1>
+	<h1 id="linux">Linux</h1>
+	<h4><a href="#top">GoTo Top</a></h4>
 
-	<p>top <br>
-	ps <br>
-	netstat <br>
-	df -h <br>
-	du -sh <br>
-	grep <br>
-	chmod <br>
-	chown</p>
+	<h3>What is Linux? Why is it used in servers?</h3>
+	<p>Linux is a kernel system, not a full operating system.<br>
+	It communicates between hardware and software and is open source.<br>
+	Operating systems like Ubuntu, Debian, Red Hat are built using the Linux kernel.</p>
+
+	<p>It is used in servers because it is stable, secure, fast, and free</p>
+
+	<h3>What is a cron job?</h3>
+	<p>Cron job is used to schedule tasks automatically at a fixed time.</p>
+
+	<h3>Difference between head and tail?</h3>
+	<p><strong>head</strong> shows first lines, <strong>tail</strong> shows last lines of a file.</p>
+
+	<h3>Server is very slow – what will you do?</h3>
+	<p>Check CPU, memory, disk usage, and application logs.</p>
+
+	<h3>Difference between process and daemon?</h3>
+	<p>Process is a running program, daemon is a background service.</p>
+
+	<h3>What is chmod?</h3>
+	<p>chmod is used to change file permissions.</p>
+
+	<h3>What is chown?</h3>
+	<p>To change the owner of a file in linux</p>
+	<i>chown krish file.txt</i>
+
+	<h3>What is find command?</h3>
+	<p>find is used to search files and folders in Linux.</p>
+
+	<h3>Which command is used to check CPU and memory?</h3>
+	<p>
+		CPU → top<br>
+		Memory → free -m
+	</p>
+
+	<h3>Difference between ps and top?</h3>
+	<p><strong>ps</strong> shows process status once, <strong>top</strong> shows live running processes.</p>
+
+	<h3>How to check running services / ports?</h3>
+	<p>Using <strong>systemctl status</strong> or <strong>netstat -tuln</strong>.</p>
+
+	<h3>How to check disk usage?</h3>
+	<p><strong>df -h</strong> for disk space, <strong>du -sh</strong> for folder size.</p>
 
 	<h3>Server disk is full. What will you do?</h3>
 	<p>First, I check disk usage using df -h.<br>
@@ -269,7 +601,8 @@
 
 	<hr>
 
-	<h1>Bash Script</h1>
+	<h1 id="bash-script">Bash Script</h1>
+	<h4><a href="#top">GoTo Top</a></h4>
 
 	<h3>Have you written Bash scripts?</h3>
 
@@ -331,81 +664,5 @@
 	</code>
 
 <hr>
-
-	<h1>CI/CD</h1>
-
-	<h3>Jenkins build failed. What steps will you follow?</h3>
-	<p>
-		Check Jenkins console log<br>
-		Check dependency errors<br>
-		Check build tool (Maven/npm)<br>
-		Check environment variables<br>
-		Check server resources		
-	</p>
-
-	<h3>What CI/CD tool did you use mostly?</h3>
-	<p>
-		I mostly used GitHub Actions with a local runner to build and test applications automatically.<br> 
-		I also have basic exposure to Jenkins pipelines.
-	</p>
-
-	<h3>What is CI/CD? Explain the pipeline flow.</h3>
-	<p>CI/CD stands for Continuous Integration and Continuous Deployment.<br>
-	It is used to automatically build, test, and deploy applications when developers push code to a repository.<p>
-
-	<strong>Pipeline flow:</strong>
-
-	<ul>
-		<li>Developer pushes code to repository</li>
-		<li>CI pipeline starts automatically</li>
-		<li>Application is built</li>
-		<li>Tests are executed</li>
-		<li>If tests pass, the application is deployed</li>
-	</ul>
-
-	<h3>How do you create a pipeline in Jenkins?</h3>
-	<p>
-		I have basic knowledge of creating pipelines in Jenkins.<br>
-		In Jenkins, we create a pipeline job and define the build steps in a Jenkinsfile.<br>
-		The pipeline usually includes stages like build, test, and deployment.
-	</p>
-
-	<h3>Difference between Freestyle Job and Pipeline Job</h3>
-	
-	<p>
-		<i>Freestyle Job</i><br>
-		Simple job configuration<br>
-        Steps added manually in Jenkins UI
-
-		<i>Pipeline Job</i><br>
-		Uses code (Jenkinsfile)<br>
-		Supports multiple stages like build, test, deploy<br>
-		Easier to maintain in version control
-	<p>
-
-	<h3>What is Jenkinsfile?</h3>
-	<p>Jenkinsfile is a configuration file used to define the CI/CD pipeline stages.<br>
-	It contains instructions for build, test, and deployment steps.</p>
-
-	<code>
-		pipeline {<br>
-		    agent any<br>
-		    stages {<br>
-		        stage('Build') {<br>
-		            steps {<br>
-		                echo 'Building application'<br>
-		            }<br>
-		        }<br>
-		    }<br>
-		}
-	</code>
-
-	<h3>What happens when a pipeline fails? How do you troubleshoot?</h3>
-	<p>
-		First, I check the pipeline logs to find the error.<br>
-		Then I verify the build steps, dependencies, and configuration.<br>
-		I also check whether the application build or tests failed.<br>
-		After fixing the issue, I rerun the pipeline.
-	</p>
 </body>
 </html>
