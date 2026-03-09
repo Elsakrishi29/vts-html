@@ -38,11 +38,70 @@
 		I have basic experience with CI/CD tools like GitHub Actions and Jenkins for build and testing.
 	</p>
 
+	<h3>Indiviual Contribution</h3>
+
+	<p>
+		My individual work was payload extraction for both cloud and local environments.<br>
+
+		First, the sales team collected customer requirements and shared them with me.<br>
+		I then checked competitor tools like Datadog, New Relic, Elastic, and Middleware to understand what the customer needed.<br>
+
+		After that, I tested the suitable tool and converted those features into Atatus payload format.<br>
+		I tested the payload locally and shared the details with the backend team.<br>
+
+		Once the backend and UI teams completed their work, I tested the package again locally.<br>
+		After everything was stable, we released the package to the customer.<br>
+
+		For this, I used AWS services, Docker, Kubernetes, bash script and Linux environments. I supported application deployments, containerization, Kubernetes configurations.
+	</p>
+
+	<h3>What cloud feature did you add?</h3>
+
+	<p>
+		One cloud feature I worked on was log forwarding from ECS containers to multiple monitoring tools.<br>
+		The customer wanted to view logs in Atatus, Grafana Loki, CloudWatch, and ECS logs at the same time.<br>
+		To implement this, I used a Fluent Bit image and updated the configuration YAML file to add multiple output destinations for these tools.<br>
+		After configuring Fluent Bit, I built the image and pushed it to Amazon ECR. Then I deployed it in Amazon ECS using the Fargate launch type.<br>
+		When the ECS task was running, Fluent Bit collected the container logs and successfully sent them to all four tools simultaneously.
+	</p>
+
+	<h3>Why did you use Fluent Bit?</h3>
+
+	<p>
+		Fluent Bit is a lightweight log processor used to collect and forward logs from containers to different monitoring systems.
+	</p>
+
 	<h3>Do you have python experience?</h3>
 	<p>
 		I have basic knowledge of Python.<br> 
 		I have used Python applications for build and testing.<br>
 		Currently I am learning Python and I have joined a Python full stack course to improve my skills.
+	</p>
+
+	<h3>What is Observability?</h3>
+	<p>Observability is the ability to understand what is happening inside an application by analyzing its data such as logs, metrics, and traces.<br>
+	It helps engineers identify and troubleshoot problems quickly.</p>
+
+	<h3>What is Monitoring?</h3>
+	<p>
+		Monitoring is the process of continuously checking the performance and health of an application or system.<br>
+		It helps detect issues like high CPU usage, errors, or slow response time.
+	</p>
+
+	<h3>What is Cloud Monitoring?</h3>
+	<p>Cloud monitoring is the process of monitoring applications and infrastructure that run in cloud environments.<br>
+	It helps track performance, availability, and resource usage in cloud services.</p>
+
+	<h3>How to test the application</h3>
+	<p>
+		First, I add the Atatus package into the application to enable monitoring.<br>
+		Then I run the application in my local environment using Docker or Kubernetes.<br>
+
+		After confirming that the application works correctly locally, I deploy the application to AWS EC2.<br>
+
+		Once the application is running in the cloud, I test it again by sending requests and generating traffic.<br>
+
+		Finally, I check the traces, metrics, and logs in Atatus and compare the latency and performance between the local and cloud environments.
 	</p>
 
 	<hr>
@@ -54,6 +113,20 @@
 		I mostly used GitHub Actions with a local runner to build and test applications automatically.<br> 
 		I also have basic exposure to Jenkins pipelines.
 	</p>
+
+	<h3>How does CI/CD work in GitHub Actions?</h3>
+
+	<p>In GitHub Actions, CI/CD pipelines run automatically when code is pushed to the repository.</p>
+
+	<ul>
+		<li>First Developer pushes code to GitHub</li>
+		<li>Then, GitHub Actions workflow is triggered</li>
+		<li>Automatically Pipeline runs build and tests</li>
+		<li>Then, Docker image is created</li>
+		<li>Image is pushed to Docker Hub / ECR</li>
+		<li>Finally, Application is deployed</li>
+	</ul>
+	<p>I used GitHub Actions with a local runner to automate Docker image builds and deployments. A local runner is a self-hosted machine that runs GitHub Actions workflows locally instead of GitHub servers.</p>
 
 	<h3>What is CI/CD? Explain the pipeline flow.</h3>
 	<p>CI/CD stands for Continuous Integration and Continuous Deployment.<br>
