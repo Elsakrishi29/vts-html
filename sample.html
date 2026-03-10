@@ -559,12 +559,51 @@
 		Which base OS to use, What files to copy, What commands to run, How to start the application</p>
 	<code>
 		FROM node:16<br>
-		COPY . /app<br>
 		WORKDIR /app<br>
+		COPY . /app<br>
 		RUN npm install<br>
+		EXPOSE 3000<br>
+		ENTRYPOINT ["node", "index.js"]
 		CMD ["npm", "start"]
 	</code>
 
+	<h3>Docker-compose file</h3>
+	<pre>
+version: "3"
+
+services:
+
+  app:
+    build: .
+    container_name: app-container
+    volumes:
+      - ./app:/app
+    ports:
+      - "3000:3000"
+    networks:
+      - mynetwork
+
+  db:
+    image: mysql:latest
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3307:3306"
+    networks:
+      - mynetwork
+
+  server:
+    image: nginx:latest
+    container_name: nginx-server
+    ports:
+      - "80:80"
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+	</pre>
 	<h3>What is Docker Compose?</h3>
 	<p>Docker Compose is a tool to run multiple containers together.<br>
 	   It Used for multi-container applications<br>
