@@ -1,0 +1,114 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*day7_practice.html*/
+
+p
+{
+	/*display: inline;*/
+	display: inline-block;
+	width: 200px;
+}
+
+#container
+{
+	position: relative;
+	z-index: 5;
+}
+
+/*div 
+{
+	position: relative;
+}*/
+
+p:first-child
+{
+	position: absolute;
+	/*top: 10px;*/
+	top: 0;
+	left: 0;
+}
+
+#fixed-button
+{
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 10;
+	background-color: blue;
+	color: white;
+	padding: 10px;
+}
+
+#link-group a
+{
+	display: block;
+	margin-bottom: 5px;
+}
+
+/*mini-project1.html*/
+
+.product-card
+{
+	width: 300px;
+	border: 1px solid #ccc;
+	padding: 15px;
+	position: relative;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.sale-badge
+{
+	position: absolute;
+	/*top: -10px;
+	right: -10px;*/
+	top: -1px;
+	right: -1px;
+	background-color: lightblue;
+	color: white;
+	padding: 5px 10px;
+	font-size: 14px;
+	z-index: 5;
+}
+
+.product-card h2, .product-card p
+{
+	display: block;
+	margin-top: 10px;
+}
+
+
+.product-card img
+{
+	width: 100%;
+}
+
+/*mini-project2.html*/
+
+header
+{
+	background-color: lightgray;
+	padding: 10px;
+	text-align: center;
+}
+
+#sticky-nav
+{
+	position: sticky;
+	top: 0;
+	/*background-color: black;
+	padding: 10px;*/
+}
+
+#sticky-nav a
+{
+	display: inline-block;
+	/*color: white;*/
+	/*text-decoration: none;*/
+	padding: 10px 15px;
+}
